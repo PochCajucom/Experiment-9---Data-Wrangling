@@ -1,0 +1,13 @@
+import pandas as oso
+Mathematics = {'Student': ['Ice Bear','Panda','Grizzly'],'Math': [80,95,79]};
+Electronics = {'Student': ['Ice Bear','Panda','Grizzly'],'Electronics': [85,81,83]};
+geas = {'Student': ['Ice Bear','Panda','Grizzly'],'GEAS': [90,79,93]};
+esat = {'Student': ['Ice Bear','Panda','Grizzly'],'ESAT': [93,89,88]};
+math = oso.DataFrame(Mathematics, columns=['Student','Math'])
+elecs = oso.DataFrame(Electronics, columns=['Student','Electronics'])
+geas = oso.DataFrame(geas, columns=['Student','GEAS'])
+esat = oso.DataFrame(esat, columns=['Student','ESAT'])
+m1 = oso.merge(math,elecs)
+m2 = oso.merge(geas,esat)
+grade = oso.merge(m1,m2)
+fixed = oso.melt(grade,id_vars='Student',var_name='Subject',value_name='Grades')
